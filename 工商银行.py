@@ -181,7 +181,9 @@ def addquer():
      else:
          print("你查询的账号不存在")
 
-
+#退出
+def bye():
+    print("bye")
 
 
 
@@ -201,7 +203,7 @@ while True:
     elif chose=="5":
         addquer()
     elif chose == "6":
-        print("6,BYE！")
+        bye()
         break
     else:
         print("您输入错误，请重新输入")
