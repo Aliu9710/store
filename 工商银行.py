@@ -44,6 +44,7 @@ def welcome():
 #银行开户逻辑-------------------------
 def bank_addUser(account,userName,password,country,provic,street,number,money):
       #判断数据库是否已满
+    global bank
     if len(bank)>=100:
         return 3
     #判断是否有重复数据
@@ -164,16 +165,25 @@ def addtransfer():
 #查询
 def addquer():
      global bank
-     account: str=input("请输入查询账号")
+     account=int(input("请输入查询账号"))
      if account in bank:
          password: str = input("请输入查询密码")
          if password==bank[account]["password"]:
+             print("你的密码是：")
              print(bank[account]["password"])
+             print("你的用户名是：")
              print(bank[account]["userName"])
+             print("你的国家是：")
              print(bank[account]["country"])
+             print("你的省份是：")
              print(bank[account]["provic"])
+             print("你的街道是：")
              print(bank[account]["street"])
+             print("你的门牌号是：")
              print(bank[account]["number"])
+             print("你的开户行名称为：")
+             print(bank_Name)
+
 
 
          else:
